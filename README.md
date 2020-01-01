@@ -33,10 +33,10 @@ Download this repository and install the plug-in into your application by follow
 * Ability to select records and save source value of checkbox column to Apex Collection.
 * The plugin can handle a large number of selections, because the values are stored in one large character attribute (CLOB) of apex collection.
 * Developers have the possibility to :
-          1. Enable/disable selection on row click.
-          2. Clear selections of a certain report on page load.
-          3. Clear selections of a certain report on change of page items.
-          4. Refresh report on change of page items.
+    1. Enable/disable selection on row click.
+    2. Clear selections of a certain report on page load.
+    3. Clear selections of a certain report on change of page items.
+    4. Refresh report on change of page items.
 * Checkboxes are not rendered if the view is Chart,Pivot or Group by.
 * Basic logging for Info Debug Level and advanced logging for App Trace Debug Level.
 * Supports Firefox, IE, Edge & Chrome
@@ -44,7 +44,9 @@ Download this repository and install the plug-in into your application by follow
 ## How to use
 * Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
+
 <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/ColumnAttributes.png" style="max-width: 40%;margin-left: 200px;">
+
 * Create a Click Dynamic Action.
 * Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
 * Select IR Checkbox as the true action.

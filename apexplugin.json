@@ -1,7 +1,7 @@
 {
-  "name" : "Interactive Report Simple Checbox",
+  "name" : "Interactive Report Checbox",
   "version" : "1.0",
-  "description" : "This plugin can be used to render checkboxes for a specified column. The selection will be saved in an apex collection.",
+  "description" : "This plugin can be used to render checkboxes for a specified column. The selections will be saved in an apex collection.",
   "keywords" : ["ir checkbox","interactive report", "checkbox", "interactive report checkbox"],
   "homepage" : "https://github.com/kcotoi/Interactive-Report-Simple-Checbox",
   "bugs" : {
@@ -21,12 +21,12 @@
  "oracle" : {
     "versions" : ["11.2.0.1", "12.1.0.1"],
     "apex" : {
-      "versions" : ["5.1.x, 18.x, 19.x"],
+      "versions" : ["5.1.4, 18.x, 19.x"],
       "plugin" : {
-        "internalName" : "KC.IRCHECKOX",
+        "internalName" : "DE.KC.IR_CHECKBOX",
         "type" : "dynamic action",
         "demo" : "https://apex.oracle.com/pls/apex/f?p=23312",
-        "previewImage" : "https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/preview.gif"
+        "previewImage" : "https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/preview.gif"
       }
     }
   }

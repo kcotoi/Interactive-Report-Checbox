@@ -60,7 +60,7 @@ See image below:
 * Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
 
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/ColumnAttributes.png" width="400px">
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/ColumnAttributes.png" width="400px">
 
 * Create a Click Dynamic Action.
 * Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
@@ -82,9 +82,9 @@ Author |Github | E-mail
 -------|-------|-------
 Dragos Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@kubicek-consulting.de](mailto:dragos.cotoi@kubicek-consulting.de)
 
-## About Kubicek Connsulting GmbH
+## About Kubicek Consulting GmbH
 Address | Website
 --------|---------
 Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de)
 
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/logo.png" width="400px">
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/logo.png" width="400px">

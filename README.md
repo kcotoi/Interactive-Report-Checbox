@@ -49,7 +49,7 @@ You can find a detailed explanation of each attribute in the help section.
 ![Help Text gif](Sources/IMG/PluginSettings.gif)
 
 ## Plugin Events
-The plugin exposes one event "Selection Changed [IR Checkbox]" , which is triggered every time the selection is changed and when the selections are cleared by change of page items or page load.
+The plugin exposes one event "Selection Changed [IR Checkbox]" , which is triggered every time the selection is changed and when the selections are cleared by change of page items.
 
 ## Component Settings
 The plugin also has 3 component settings which allows the developer to change the error messages to be shown to the user.

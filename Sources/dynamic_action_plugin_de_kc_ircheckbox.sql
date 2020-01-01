@@ -21,12 +21,12 @@ wwv_flow_api.import_begin (
 );
 end;
 /
-prompt --application/shared_components/plugins/dynamic_action/de_kc_ir_checkbox
+prompt --application/shared_components/plugins/dynamic_action/de_kc_ircheckbox
 begin
 wwv_flow_api.create_plugin(
  p_id=>wwv_flow_api.id(224405160840830550)
 ,p_plugin_type=>'DYNAMIC ACTION'
-,p_name=>'DE.KC.IR_CHECKBOX'
+,p_name=>'DE.KC.IRCHECKBOX'
 ,p_display_name=>'IR Checkbox'
 ,p_category=>'COMPONENT'
 ,p_supported_ui_types=>'DESKTOP'

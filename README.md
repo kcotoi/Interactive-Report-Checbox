@@ -2,7 +2,7 @@
 
 Interactive Report Checkbox APEX Plugin
 
-![Preview gif](Preview.gif)
+![Preview gif](Sources/IMG/Preview.gif)
 
 ## Table of Contents
 
@@ -46,7 +46,7 @@ Download this repository and install the plug-in into your application by follow
 
 ## Plugin Settings
 You can find a detailed explanation of each attribute in the help section.
-![Help Text gif](PluginSettings.gif)
+![Help Text gif](Sources/IMG/PluginSettings.gif)
 
 ## Plugin Events
 The plugin exposes one event "Selection Changed [IR Checkbox]" , which is triggered every time the selection is changed and when the selections are cleared by change of page items or page load.
@@ -54,13 +54,13 @@ The plugin exposes one event "Selection Changed [IR Checkbox]" , which is trigge
 ## Component Settings
 The plugin also has 3 component settings which allows the developer to change the error messages to be shown to the user.
 See image below:
-![Component Settings png](ComponentSettings.png)
+![Component Settings png](Sources/IMG/ComponentSettings.png)
 
 ## How to Setup
 * Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
 
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/ColumnAttributes.png" width="400px">
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/ColumnAttributes.png" width="400px">
 
 * Create a Click Dynamic Action.
 * Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
@@ -87,4 +87,4 @@ Address | Website
 --------|---------
 Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de)
 
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/logo.png" width="400px">
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/logo.png" width="400px">

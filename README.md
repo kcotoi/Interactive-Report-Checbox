@@ -42,7 +42,6 @@ Download this repository and install the plug-in into your application by follow
     * Refresh report on change of page items.
 * Checkboxes are not rendered if the view is Chart,Pivot or Group by.
 * Basic logging for Info Debug Level and advanced logging for App Trace Debug Level.
-* Supports Firefox, IE, Edge & Chrome
 
 ## Plugin Settings
 You can find a detailed explanation of each attribute in the help section.
@@ -57,7 +56,7 @@ See image below:
 ![Component Settings png](Sources/IMG/ComponentSettings.png)
 
 ## How to Setup
-* Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
+* Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
 
 <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/ColumnAttributes.png" width="400px">
@@ -65,10 +64,11 @@ See image below:
 * Create a Click Dynamic Action.
 * Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
 * Select IR Checkbox as the true action.
-    * NOTE: Don't disable attribute "Fire on Initialization", the plugin will not be rendered.
+    * NOTE: Don't disable attribute "Fire on Initialization", if you do the checkboxes will not be rendered on page load.
 * Configure the plugin settings to fit your needs.
 
 ## Issues
+* Please let me know if you find any.
 
 ## Future developments
 * Please let me know any of your wishes
@@ -80,7 +80,7 @@ MIT
 ## About Author
 Author |Github | E-mail
 -------|-------|-------
-Dragos Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@kubicek-consulting.de](mailto:dragos.cotoi@kubicek-consulting.de)
+Dragos Constantin Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@kubicek-consulting.de](mailto:dragos.cotoi@kubicek-consulting.de)
 
 ## About Kubicek Consulting GmbH
 Address | Website

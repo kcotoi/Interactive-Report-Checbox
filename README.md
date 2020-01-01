@@ -32,6 +32,10 @@ Download this repository and install the plug-in into your application by follow
 * Renders checkboxes for a given column in an Interactive Report.
 * Ability to select records and save source value of checkbox column to Apex Collection.
 * The plugin can handle a large number of selections, because the values are stored in one large character attribute (CLOB) of apex collection.
+          * to override action on click
+          * to disable entry
+          * to hide entry
+          * to add submenu defined outside APEX list
 * Developers have the possibility to :
           * Enable/disable selection on row click.
           * Clear selections of a certain report on page load.
@@ -58,7 +62,7 @@ You can find a detailed explanation of each attribute in the help section.
 ## Plugin Events
 The plugin exposes one event "Selection Changed [IR Checkbox]" , which is triggered every time the selection is changed and when the selections are cleared by change of page items or page load.
 
-##Component Settings
+## Component Settings
 The plugin also has 3 component settings which allows the developer to change the error messages to be shown to the user.
 See image below:
 ![Component Settings png](ComponentSettings.png)

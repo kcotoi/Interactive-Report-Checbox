@@ -53,7 +53,6 @@ The plugin exposes one event "Selection Changed [IR Checkbox]" , which is trigge
 
 ## Component Settings
 The plugin also has 3 component settings which allows the developer to change the error messages to be shown to the user.
-See image below:
 ![Component Settings png](Sources/IMG/ComponentSettings.png)
 
 ## How to Setup

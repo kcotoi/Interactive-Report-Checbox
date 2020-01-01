@@ -3,9 +3,9 @@
   "version" : "1.0",
   "description" : "This plugin can be used to render checkboxes for a specified column. The selections will be saved in an apex collection.",
   "keywords" : ["ir checkbox","interactive report", "checkbox", "interactive report checkbox"],
-  "homepage" : "https://github.com/kcotoi/Interactive-Report-Simple-Checbox",
+  "homepage" : "https://github.com/kcotoi/Interactive-Report-Checbox",
   "bugs" : {
-    "url" : "https://github.com/kcotoi/Interactive-Report-Simple-Checbox/issues",
+    "url" : "https://github.com/kcotoi/Interactive-Report-Checbox/issues",
     "email" : "dragos.cotoi@kubicek-consulting.de"
   },
   "license" : "MIT",
@@ -16,7 +16,7 @@
   },
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/kcotoi/Interactive-Report-Simple-Checbox.git"
+    "url" : "https://github.com/kcotoi/Interactive-Report-Checbox.git"
   },
  "oracle" : {
     "versions" : ["11.2.0.1", "12.1.0.1"],

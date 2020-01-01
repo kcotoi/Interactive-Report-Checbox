@@ -1,6 +1,6 @@
-# Interactive-Report-Simple-Checbox
+# Interactive-Report-Checbox
 
-Interactive Report Simple Checkbox APEX Plugin
+Interactive Report Checkbox APEX Plugin
 
 ![Preview gif](Preview.gif)
 

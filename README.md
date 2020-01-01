@@ -4,6 +4,7 @@ Interactive Report Checkbox APEX Plugin
 
 ![Preview gif](Sources/IMG/Preview.gif)
 
+
 ## Table of Contents
 
 - [Demo](#demo)
@@ -58,8 +59,9 @@ See image below:
 ## How to Setup
 * Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
-
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/ColumnAttributes.png" width="400px">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/ColumnAttributes.png" width="400px">
+</p>
 
 * Create a Click Dynamic Action.
 * Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
@@ -86,5 +88,6 @@ Dragos Constantin Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@k
 Address | Website
 --------|---------
 Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de)
-
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/logo.png" width="400px">
+<p align="center">
+    <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/logo.png" width="400px">
+</p>

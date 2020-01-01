@@ -15,9 +15,9 @@ begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2016.08.24'
 ,p_release=>'5.1.4.00.08'
-,p_default_workspace_id=>78802873794577832
-,p_default_application_id=>21300
-,p_default_owner=>'PPAC'
+,p_default_workspace_id=>68902856794577361
+,p_default_application_id=>21000
+,p_default_owner=>'Sample'
 );
 end;
 /

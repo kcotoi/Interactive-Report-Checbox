@@ -21,7 +21,7 @@
  "oracle" : {
     "versions" : ["11.2.0.1", "12.1.0.1"],
     "apex" : {
-      "versions" : ["5.x, 18.x, 19.x"],
+      "versions" : ["5.1.x, 18.x, 19.x"],
       "plugin" : {
         "internalName" : "KC.IRCHECKOX",
         "type" : "dynamic action",

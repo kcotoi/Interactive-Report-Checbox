@@ -74,19 +74,17 @@ See image below:
 * Please let me know any of your wishes
 
 ## License
-  
+
 MIT
 
 ## About Author
 Author |Github | E-mail
 -------|-------|-------
-Dragos Cotoi | [@kcotoi](https://github.com/kcotoi) | mailto:dragos.cotoi@kubicek-consulting.de
+Dragos Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@kubicek-consulting.de](mailto:dragos.cotoi@kubicek-consulting.de)
 
 ## About Kubicek Connsulting GmbH
-Pretius Sp. z o.o. Sp. K.
-
-Address | Website | Phone Number
---------|---------|-------
-Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de) | 06251-9447-686
+Address | Website
+--------|---------
+Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de)
 
 ![Company Logo png](logo.png)

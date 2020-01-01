@@ -12,8 +12,11 @@ Interactive Report Simple Checkbox APEX Plugin
 - [Plugin Settings](#plugin-settings)
     - [Plugin Events](#plugin-events)
     - [Component Settings](#component-settings)
+- [How to Setup](#how-to-setup)
 - [Issues](#issues)
 - [License](#license)
+- [About Author](#about-author)
+- [About Kubicek Connsulting GmbH](#about-kubicek-consulting-gmbh)
 
 ## Demo
 https://apex.oracle.com/pls/apex/f?p=23312
@@ -25,7 +28,7 @@ https://apex.oracle.com/pls/apex/f?p=23312
 Download this repository and install the plug-in into your application by following those steps:
 1. Install package `IR_CHECKBOX_UTIL` in Oracle APEX Schema
     * You can find it in folder : `Sources/DB`
-1. Install the plugin file `dynamic_action_plugin_com_pretius_apex_contextmenu.sql`
+1. Install the plugin file `dynamic_action_plugin_kc_ir_checkbox.sql`
     * You can find it in folder : `Sources`
 
 ## Features
@@ -41,18 +44,6 @@ Download this repository and install the plug-in into your application by follow
 * Basic logging for Info Debug Level and advanced logging for App Trace Debug Level.
 * Supports Firefox, IE, Edge & Chrome
 
-## How to use
-* Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
-* Disable column options allowing the user to sort, hide , filter etc. like in image below:
-
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/ColumnAttributes.png" width="400px" margin-left="200px"/>
-
-* Create a Click Dynamic Action.
-* Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
-* Select IR Checkbox as the true action.
-    * NOTE: Don't disable attribute "Fire on Initialization", the plugin will not be rendered.
-* Configure the plugin settings to fit your needs.
-
 ## Plugin Settings
 You can find a detailed explanation of each attribute in the help section.
 ![Help Text gif](PluginSettings.gif)
@@ -65,11 +56,37 @@ The plugin also has 3 component settings which allows the developer to change th
 See image below:
 ![Component Settings png](ComponentSettings.png)
 
+## How to Setup
+* Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
+* Disable column options allowing the user to sort, hide , filter etc. like in image below:
+
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/ColumnAttributes.png" width="400px" margin-left="200px"/>
+
+* Create a Click Dynamic Action.
+* Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
+* Select IR Checkbox as the true action.
+    * NOTE: Don't disable attribute "Fire on Initialization", the plugin will not be rendered.
+* Configure the plugin settings to fit your needs.
+
 ## Issues
 
 ## Future developments
 * Please let me know any of your wishes
 
 ## License
-
+  
 MIT
+
+## About Author
+Author |Github | E-mail
+-------|-------|-------
+Dragos Cotoi | [@kcotoi](https://github.com/kcotoi) | mailto:dragos.cotoi@kubicek-consulting.de
+
+## About Kubicek Connsulting GmbH
+Pretius Sp. z o.o. Sp. K.
+
+Address | Website | Phone Number
+--------|---------|-------
+Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de) | 06251-9447-686
+
+![Company Logo png](logo.png)

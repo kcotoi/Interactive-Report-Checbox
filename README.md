@@ -45,7 +45,7 @@ Download this repository and install the plug-in into your application by follow
 * Create a virtual column or select an existing column and set the static id, which we will later set it in Dynamic Action Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
 
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/ColumnAttributes.png" margin-left="200px" width="400px" >
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/ColumnAttributes.png" style ="margin-left=200px; width=400px  >
 
 * Create a Click Dynamic Action.
 * Bind the dynamic action to the Interactive Report for which you want to render checkboxes.

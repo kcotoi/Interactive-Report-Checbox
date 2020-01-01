@@ -1,6 +1,6 @@
-# Interactive-Report-Simple-Checbox
+# Interactive-Report-Checbox
 
-Interactive Report Simple Checkbox APEX Plugin
+Interactive Report Checkbox APEX Plugin
 
 ![Preview gif](Preview.gif)
 
@@ -28,7 +28,7 @@ https://apex.oracle.com/pls/apex/f?p=23312
 Download this repository and install the plug-in into your application by following those steps:
 1. Install package `IR_CHECKBOX_UTIL` in Oracle APEX Schema
     * You can find it in folder : `Sources/DB`
-1. Install the plugin file `dynamic_action_plugin_kc_ir_checkbox.sql`
+1. Install the plugin file `dynamic_action_plugin_de_kc_ir_checkbox.sql`
     * You can find it in folder : `Sources`
 
 ## Features

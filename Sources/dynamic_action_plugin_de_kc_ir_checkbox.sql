@@ -6,50 +6,27 @@ whenever sqlerror exit sql.sqlcode rollback
 -- ORACLE Application Express (APEX) export file
 --
 -- You should run the script connected to SQL*Plus as the Oracle user
--- APEX_190200 or as the owner (parsing schema) of the application.
+-- APEX_050100 or as the owner (parsing schema) of the application.
 --
 -- NOTE: Calls to apex_application_install override the defaults below.
 --
 --------------------------------------------------------------------------------
 begin
 wwv_flow_api.import_begin (
- p_version_yyyy_mm_dd=>'2019.10.04'
-,p_release=>'19.2.0.00.18'
-,p_default_workspace_id=>14624056431536287560
-,p_default_application_id=>23312
-,p_default_id_offset=>0
-,p_default_owner=>'APEXTRICKS'
+ p_version_yyyy_mm_dd=>'2016.08.24'
+,p_release=>'5.1.4.00.08'
+,p_default_workspace_id=>78802873794577832
+,p_default_application_id=>21300
+,p_default_owner=>'PPAC'
 );
 end;
 /
- 
-prompt APPLICATION 23312 - Interactive Report Simple Checkbox Demo
---
--- Application Export:
---   Application:     23312
---   Name:            Interactive Report Simple Checkbox Demo
---   Date and Time:   17:45 Wednesday January 1, 2020
---   Exported By:     KCOTOI
---   Flashback:       0
---   Export Type:     Component Export
---   Manifest
---     PLUGIN: 16155771402385853210
---   Manifest End
---   Version:         19.2.0.00.18
---   Instance ID:     63113759365424
---
-
-begin
-  -- replace components
-  wwv_flow_api.g_mode := 'REPLACE';
-end;
-/
-prompt --application/shared_components/plugins/dynamic_action/kc_ir_checkbox
+prompt --application/shared_components/plugins/dynamic_action/de_kc_ir_checkbox
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224405160840830550)
 ,p_plugin_type=>'DYNAMIC ACTION'
-,p_name=>'KC.IR_CHECKBOX'
+,p_name=>'DE.KC.IR_CHECKBOX'
 ,p_display_name=>'IR Checkbox'
 ,p_category=>'COMPONENT'
 ,p_supported_ui_types=>'DESKTOP'
@@ -65,11 +42,11 @@ wwv_flow_api.create_plugin(
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
 ,p_version_identifier=>'1'
-,p_files_version=>345
+,p_files_version=>97
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155771783057853211)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224415344364930688)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'APPLICATION'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -80,11 +57,11 @@ wwv_flow_api.create_plugin_attribute(
 ,p_show_in_wizard=>false
 ,p_default_value=>'Error while trying to render checkboxes!'
 ,p_supported_ui_types=>'DESKTOP'
-,p_is_translatable=>false
+,p_is_translatable=>true
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155772155152853212)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224416174417936810)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'APPLICATION'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -95,11 +72,11 @@ wwv_flow_api.create_plugin_attribute(
 ,p_show_in_wizard=>false
 ,p_default_value=>'Error during selection!'
 ,p_supported_ui_types=>'DESKTOP'
-,p_is_translatable=>false
+,p_is_translatable=>true
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155772564633853212)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224416648210943886)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'APPLICATION'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -109,11 +86,12 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_common=>false
 ,p_show_in_wizard=>false
 ,p_default_value=>'Error while trying to reset current selections!'
-,p_is_translatable=>false
+,p_supported_ui_types=>'DESKTOP'
+,p_is_translatable=>true
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155772946071853213)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224405300552830580)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -121,8 +99,6 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>false
 ,p_default_value=>'SELECTED_COLLECTION'
-,p_display_length=>255
-,p_max_length=>255
 ,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -137,8 +113,8 @@ wwv_flow_api.create_plugin_attribute(
 '</ul>'))
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155773339263853213)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224405797650830583)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -146,13 +122,12 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>false
 ,p_default_value=>'IRSELECTION'
-,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
 ,p_help_text=>'Put here the static id of the column you want to use as a checkbox.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155773796591853214)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224406053639830583)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -160,12 +135,13 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'CHECKBOX'
 ,p_is_required=>false
 ,p_default_value=>'N'
+,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
 ,p_help_text=>'Enable this attribute if you would like to clear selections on page load.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155774168077853214)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224406402184830584)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
@@ -173,28 +149,30 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'CHECKBOX'
 ,p_is_required=>false
 ,p_default_value=>'N'
+,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
 ,p_help_text=>'Enable this attribute if you would like to clear selections on change of certain page items.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155774528905853214)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224406893589830584)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
 ,p_prompt=>'Page Items'
 ,p_attribute_type=>'PAGE ITEMS'
 ,p_is_required=>false
+,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(16155774168077853214)
+,p_depending_on_attribute_id=>wwv_flow_api.id(224406402184830584)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'Y'
 ,p_help_text=>'Select the page items which will clear the selections on change.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155774993933853215)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224407235459830584)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>60
@@ -202,30 +180,31 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'CHECKBOX'
 ,p_is_required=>false
 ,p_default_value=>'N'
+,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(16155774168077853214)
+,p_depending_on_attribute_id=>wwv_flow_api.id(224406402184830584)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'Y'
 ,p_help_text=>'Enable this attribute if you want to refresh the report when page items are changed.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(16155775325649853215)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224414844645920101)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
 ,p_prompt=>'Selection on Row Click'
 ,p_attribute_type=>'CHECKBOX'
 ,p_is_required=>false
-,p_default_value=>'Y'
+,p_default_value=>'N'
 ,p_supported_ui_types=>'DESKTOP'
 ,p_is_translatable=>false
 ,p_help_text=>'Enable this attribute if you want to enable selection on row click.'
 );
 wwv_flow_api.create_plugin_event(
- p_id=>wwv_flow_api.id(16155776845975853218)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224410641414830608)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_name=>'ir_selection_changed'
 ,p_display_name=>'Selection Changed'
 );
@@ -380,10 +359,10 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(16155777228203853219)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224411670507869952)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_file_name=>'apex_ir_checkbox.js'
-,p_mime_type=>'text/javascript'
+,p_mime_type=>'application/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_api.varchar2_to_blob(wwv_flow_api.g_varchar2_table)
 );
@@ -478,10 +457,10 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(16155777694868853219)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224412053821871182)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_file_name=>'apex_ir_checkbox.min.js'
-,p_mime_type=>'text/javascript'
+,p_mime_type=>'application/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_api.varchar2_to_blob(wwv_flow_api.g_varchar2_table)
 );
@@ -550,10 +529,10 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(16155778025567853219)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224412422867872097)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_file_name=>'apex_kc_utils.js'
-,p_mime_type=>'text/javascript'
+,p_mime_type=>'application/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_api.varchar2_to_blob(wwv_flow_api.g_varchar2_table)
 );
@@ -583,18 +562,17 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(16155778432370853220)
-,p_plugin_id=>wwv_flow_api.id(16155771402385853210)
+ p_id=>wwv_flow_api.id(224412800942873165)
+,p_plugin_id=>wwv_flow_api.id(224405160840830550)
 ,p_file_name=>'apex_kc_utils.min.js'
-,p_mime_type=>'text/javascript'
+,p_mime_type=>'application/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_api.varchar2_to_blob(wwv_flow_api.g_varchar2_table)
 );
 end;
 /
-prompt --application/end_environment
 begin
-wwv_flow_api.import_end(p_auto_install_sup_obj => nvl(wwv_flow_application_install.get_auto_install_sup_obj, false));
+wwv_flow_api.import_end(p_auto_install_sup_obj => nvl(wwv_flow_application_install.get_auto_install_sup_obj, false), p_is_component_import => true);
 commit;
 end;
 /

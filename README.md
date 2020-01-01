@@ -87,4 +87,4 @@ Address | Website
 --------|---------
 Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de)
 
-<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/logo.png" width="300px">
+<img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Simple-Checbox/master/logo.png" width="400px">

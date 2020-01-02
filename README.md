@@ -17,7 +17,7 @@ Interactive Report Checkbox APEX Plugin
 - [Issues](#issues)
 - [License](#license)
 - [About Author](#about-author)
-- [About Kubicek Connsulting GmbH](#about-kubicek-consulting-gmbh)
+- [About Kubicek Consulting GmbH](#about-kubicek-consulting-gmbh)
 
 ## Demo
 https://apex.oracle.com/pls/apex/f?p=23312
@@ -84,9 +84,9 @@ Author |Github | E-mail
 Dragos Constantin Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@kubicek-consulting.de](mailto:dragos.cotoi@kubicek-consulting.de)
 
 ## About Kubicek Consulting GmbH
-Address | Website
---------|---------
-Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de)
+Address | Website | E-mail
+--------|---------|-------
+Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de) | [info@kubicek-consulting.de](mailto:info@kubicek-consulting.de)
 <p align="center">
     <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/logo.png" width="400px">
 </p>

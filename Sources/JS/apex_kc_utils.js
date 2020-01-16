@@ -129,22 +129,7 @@ apex.kcUtils = {};
     }
     return pObj.length > 0;
   }
-
-  // Example to call var profiledMax = timeFunction(Math.max, 'Math.max');
-  //profiledMax.call(Math, 1, 2);
-  //Expected log => "Math.max took 2 ms to execute"
-  self.timeFunction = function(func, funcName) {
-    return function() {
-      var start = new Date(),
-        returnVal = func.apply(this, arguments),
-        end = new Date(),
-        duration = stop.getTime() - start.getTime();
-
-      console.log(`${funcName} took ${duration} ms to execute`);
-      return returnVal;
-    };
-  }
-
+  
   self.customStringify = function(v) {
     const cache = new Set();
     return JSON.stringify(v, function(key, value) {

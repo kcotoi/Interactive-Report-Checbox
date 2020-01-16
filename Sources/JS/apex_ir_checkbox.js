@@ -192,7 +192,8 @@ apex.kcUtils.irCheckbox.options = [];
 
       allCells.each(function() {
         var value = this.textContent;
-        if (!this.className.includes('aggregate')) {
+
+        if (this.className.indexOf('aggregate') < 0) {
           $(this).empty().append(irCk.createCheckbox(value));
         }
       });

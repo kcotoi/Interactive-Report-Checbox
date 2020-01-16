@@ -24,6 +24,7 @@ https://apex.oracle.com/pls/apex/f?p=23312
 
 ## Release History
 1.0 Initial Version
+1.1 Implemented fix for Internet Explorer 11.
 
 ## How to install
 Download this repository and install the plug-in into your application by following those steps:
@@ -63,7 +64,10 @@ The plugin also has 3 component settings which allows the developer to change th
 </p>
 
 * Create a Click Dynamic Action.
-* Bind the dynamic action to the Interactive Report for which you want to render checkboxes.
+* Bind the dynamic action to the Interactive Report Region for which you want to render checkboxes.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/BindDAToRegion.png" width="400px">
+</p>
 * Select IR Checkbox as the true action.
     * NOTE: Don't disable attribute "Fire on Initialization", if you do the checkboxes will not be rendered on page load.
 * Configure the plugin settings to fit your needs.
@@ -73,6 +77,8 @@ The plugin also has 3 component settings which allows the developer to change th
 
 ## Future developments
 * Please let me know any of your wishes
+* Find workaround for using synchronous ajax request for rendering checkboxes as this will be deprecated in the future.
+* Implement option to use columns as display only checkbox. An option will be provided to specify source values to determine the state of the checkbox (checked/unchecked).
 
 ## License
 

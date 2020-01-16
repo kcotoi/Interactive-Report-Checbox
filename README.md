@@ -68,6 +68,7 @@ The plugin also has 3 component settings which allows the developer to change th
 <p align="center">
     <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/BindDAToRegion.png" width="400px">
 </p>
+
 * Select IR Checkbox as the true action.
     * NOTE: Don't disable attribute "Fire on Initialization", if you do the checkboxes will not be rendered on page load.
 * Configure the plugin settings to fit your needs.

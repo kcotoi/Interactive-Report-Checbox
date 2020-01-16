@@ -70,7 +70,7 @@ The plugin also has 3 component settings which allows the developer to change th
 </p>
 
 * Select IR Checkbox as the true action.
-    * NOTE: Don't disable attribute "Fire on Initialization", if you do the checkboxes will not be rendered on page load.
+    * NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.
 * Configure the plugin settings to fit your needs.
 
 ## Issues

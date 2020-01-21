@@ -84,7 +84,7 @@ The plugin also has 3 component settings which allows the developer to change th
 
 ## How to Setup Only IR Display only Checkbox
 * Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings.
-   * <b>Note: This columns should have source values (Y/N).</b>
+   * <b>NOTE: This columns should have source values (Y/N).</b>
 * Create a After Refresh Dynamic Action. This is better since we will not need to handle any click actions like we need when we want to also have selection column.
 * Bind the dynamic action to the Interactive Report Region for which you want to render checkboxes.
 <p align="center">

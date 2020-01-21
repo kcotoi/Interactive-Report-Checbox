@@ -1,7 +1,8 @@
 {
   "name" : "Interactive Report Checbox",
-  "version" : "1.2",
-  "description" : "This plugin can be used to render checkboxes for a specified column. The selections will be saved in an apex collection.",
+  "version" : "1.1",
+  "description" : "This plugin can be used to render checkboxes for a specified column. The selections will be saved in an apex collection.
+                   Extended plugin to also support rendering of display only checkboxes.",
   "keywords" : ["ir checkbox","interactive report", "checkbox", "interactive report checkbox"],
   "homepage" : "https://github.com/kcotoi/Interactive-Report-Checbox",
   "bugs" : {

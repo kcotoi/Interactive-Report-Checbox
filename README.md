@@ -51,7 +51,7 @@ Download this repository and install the plug-in into your application by follow
     * Refresh report on change of page items.
 * Checkboxes are not rendered if the view is Chart,Pivot or Group by.
 * Render display only checkboxes. You have an attribute to specify static ids of columns which you would like to render as display only checkbox. User will be able to filter/sort the report using these columns.
-  * NOTE: Source values of these columns should be (Y/N), only these values are recognized by the plugin to set the state of the checkbox as (checked/unchecked).
+  * <b>NOTE: Source values of these columns should be (Y/N), only these values are recognized by the plugin to set the state of the checkbox as (checked/unchecked).<b>
 * Basic logging for Info Debug Level and advanced logging for App Trace Debug Level.
 
 ## Plugin Settings
@@ -79,18 +79,20 @@ The plugin also has 3 component settings which allows the developer to change th
 </p>
 
 * Select IR Checkbox as the true action.
-    * NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.
+    * <b>NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.<b>
 * Configure the plugin settings to fit your needs.
 
 ## How to Setup Only IR Display only Checkbox
-* Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings. Note: This columns should have source values (Y/N).
+* Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings.
+   * <b>Note: This columns should have source values (Y/N).<b>
 * Create a After Refresh Dynamic Action. This is better since we will not need to handle any click actions like we need when we want to also have selection column.
 * Bind the dynamic action to the Interactive Report Region for which you want to render checkboxes.
 <p align="center">
     <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/DisplayBindDAToReport.png" width="400px">
 </p>
+
 * Select IR Checkbox as the true action.
-    * NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.
+    * <b>NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.<b>
 * Disable attribute "Enable Selector".
 * Add static ids of columns into attribute "Display Column(s)".
 

@@ -2,18 +2,20 @@
 
 Interactive Report Checkbox APEX Plugin
 
-![Preview gif](Sources/IMG/Preview.gif)
+![Preview gif](Sources/IMG/Preview2.gif)
 
 
 ## Table of Contents
 
 - [Demo](#demo)
+- [How Demo Page was configured](#how-demo-page-was-configured)
 - [Features](#features)
 - [How to install](#how-to-install)
 - [Plugin Settings](#plugin-settings)
     - [Plugin Events](#plugin-events)
     - [Component Settings](#component-settings)
-- [How to Setup](#how-to-setup)
+- [How to Setup IR Selector](#how-to-setup-ir-selector)
+- [How to Setup Only IR Display only Checkbox](#how-to-setup-only-ir-display-only-checkbox)
 - [Issues](#issues)
 - [License](#license)
 - [About Author](#about-author)
@@ -22,9 +24,14 @@ Interactive Report Checkbox APEX Plugin
 ## Demo
 https://apex.oracle.com/pls/apex/f?p=23312
 
+## How Demo Page was configured
+In GIF below you can see exactly how the demo page for this plugin was configured.
+![Demo Page Config gif](Sources/IMG/DemoPageConfig.gif)
+
 ## Release History
 1.0 Initial Version
 1.1 Implemented fix for Internet Explorer 11.
+1.2 Improved the plugin by adding support for rendering of display only checkboxes.
 
 ## How to install
 Download this repository and install the plug-in into your application by following those steps:
@@ -43,6 +50,8 @@ Download this repository and install the plug-in into your application by follow
     * Clear selections of a certain report on change of page items.
     * Refresh report on change of page items.
 * Checkboxes are not rendered if the view is Chart,Pivot or Group by.
+* Render display only checkboxes. You have an attribute to specify static ids of columns which you would like to render as display only checkbox. User will be able to filter/sort the report using these columns.
+  * NOTE: Source values of these columns should be (Y/N), only these values are recognized by the plugin to set the state of the checkbox as (checked/unchecked).
 * Basic logging for Info Debug Level and advanced logging for App Trace Debug Level.
 
 ## Plugin Settings
@@ -56,7 +65,7 @@ The plugin exposes one event "Selection Changed [IR Checkbox]" , which is trigge
 The plugin also has 3 component settings which allows the developer to change the error messages to be shown to the user.
 ![Component Settings png](Sources/IMG/ComponentSettings.png)
 
-## How to Setup
+## How to Setup IR Selection
 * Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings.
 * Disable column options allowing the user to sort, hide , filter etc. like in image below:
 <p align="center">
@@ -73,13 +82,23 @@ The plugin also has 3 component settings which allows the developer to change th
     * NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.
 * Configure the plugin settings to fit your needs.
 
+## How to Setup Only IR Display only Checkbox
+* Create a virtual column or select an existing column and set the static id, which we will later set it in DA Plugin Settings. Note: This columns should have source values (Y/N).
+* Create a After Refresh Dynamic Action. This is better since we will not need to handle any click actions like we need when we want to also have selection column.
+* Bind the dynamic action to the Interactive Report Region for which you want to render checkboxes.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/DisplayBindDAToReport.png" width="400px">
+</p>
+* Select IR Checkbox as the true action.
+    * NOTE: Don't disable attribute "Fire on Initialization", if you do , then the checkboxes will not be rendered on page load.
+* Disable attribute "Enable Selector".
+* Add static ids of columns into attribute "Display Column(s)".
+
 ## Issues
 * Please let me know if you find any.
 
 ## Future developments
 * Please let me know any of your wishes
-* Find workaround for using synchronous ajax request for rendering checkboxes as this will be deprecated in the future.
-* Implement option to use columns as display only checkbox. An option will be provided to specify source values to determine the state of the checkbox (checked/unchecked).
 
 ## License
 

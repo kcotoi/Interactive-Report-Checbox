@@ -118,8 +118,11 @@ BEGIN
    -- used to be printed in debug console when DEBUG is on
    l_result.attribute_01    := l_attr_collec_name;
    l_result.attribute_02    := l_attr_col_id;
+   l_result.attribute_05    := p_dynamic_action.attribute_05;
    l_result.attribute_06    := p_dynamic_action.attribute_06;
    l_result.attribute_07    := p_dynamic_action.attribute_07;
+   l_result.attribute_08    := p_dynamic_action.attribute_08;
+   l_result.attribute_09    := p_dynamic_action.attribute_09;
 
    IF apex_application.g_debug THEN
       apex_plugin_util.debug_dynamic_action (p_plugin           => p_plugin,
@@ -232,7 +235,6 @@ BEGIN
          apex_collection.add_member (p_collection_name   => l_attr_collec_name,
                                      p_c001              => l_rec_id);
       END LOOP;
-
       IF l_count > 1 THEN
           APEX_DEBUG.TRACE(p_message => l_count || ' Records were added to the collection "'||l_attr_collec_name||'" !');
       ELSE

@@ -15,14 +15,17 @@ apex.kcUtils.irCheckbox.options = [];
     options[irCk.reportId].context = this;
     options[irCk.reportId].resumeCallback = this.resumeCallback;
     options[irCk.reportId].refreshReport = this.action.attribute06;
+    options[irCk.reportId].internalRefreshReportFlag = false;
     options[irCk.reportId].checkBoxColumnId = this.action.attribute02;
     options[irCk.reportId].rowSelectionEnabled = this.action.attribute07;
+    options[irCk.reportId].displayOnlyColumns = this.action.attribute08;
+    options[irCk.reportId].renderOnlyDisabledCB = this.action.attribute09 == 'N' ? true : false;
     options[irCk.reportId].ajax = {
       id: this.action.ajaxIdentifier,
       running: false,
       type: RENDER_CHECKBOX
     };
-    options[irCk.reportId].pageItems = this.action.attribute08;
+    options[irCk.reportId].pageItems = this.action.attribute05;
 
     info('Init Interactive Report Checbox for Report with Static ID "' + irCk.reportId + '"!');
 
@@ -34,7 +37,7 @@ apex.kcUtils.irCheckbox.options = [];
 
     } else { //Should be click event
 
-      if (!irCk.irHasMultipleViews()) {
+      if (!irCk.irHasMultipleViews() && !options[irCk.reportId].renderOnlyDisabledCB) {
         irCk.handleClickEvent();
       }
     }
@@ -50,7 +53,7 @@ apex.kcUtils.irCheckbox.options = [];
 
     if (lEventTargetElement[0].nodeName == "INPUT") {
       lCheckBoxElement = lEventTargetElement;
-    } else {
+    } else if (pElement.attr('headers') == options[irCk.reportId].checkBoxColumnId) {
       lCheckBoxElement = pElement.find('input');
     }
     return lCheckBoxElement;
@@ -65,14 +68,12 @@ apex.kcUtils.irCheckbox.options = [];
       prevFiltersArr = [],
       newFiltersArr = [];
 
-    //if (util.objExists(pPrevFilters) && util.objExists(pNewFilters)) {
     pPrevFilters.each(function() {
       prevFiltersArr.push(this.textContent);
     });
     pNewFilters.each(function() {
       newFiltersArr.push(this.textContent);
-    })
-    //}
+    });
 
     if (JSON.stringify(prevFiltersArr) !== JSON.stringify(newFiltersArr)) {
       filtersAreSame = false;
@@ -171,45 +172,72 @@ apex.kcUtils.irCheckbox.options = [];
     irCk.updateStateOfCheckboxHeader();
   }
 
-  irCk.renderCheckboxes = function(pRenderSelections) {
-    var colHeader = $(irCk.reportId).find("th#" + options[irCk.reportId].checkBoxColumnId),
-      allCells = $(irCk.reportId).find("td[headers*=" + options[irCk.reportId].checkBoxColumnId + "]");
-    info('irCk.renderCheckboxes -> We will render checboxes for column "' + options[irCk.reportId].checkBoxColumnId + '"!');
+  irCk.renderCheckboxes = function() {
+    if (!options[irCk.reportId].renderOnlyDisabledCB) {
+      var colHeader = $(irCk.reportId).find("th#" + options[irCk.reportId].checkBoxColumnId),
+        allCells = $(irCk.reportId).find("td[headers*=" + options[irCk.reportId].checkBoxColumnId + "]");
 
-    if (util.objExists(colHeader)) {
-      var checkbox = irCk.createCheckbox('all');
+      info('irCk.renderCheckboxes -> We will render checboxes for column "' + options[irCk.reportId].checkBoxColumnId + '"!');
 
-      info('irCk.renderCheckboxes -> Target column header with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" found and we will render checkbox!');
+      if (util.objExists(colHeader)) {
+        var checkbox = irCk.createCheckbox('all');
 
-      colHeader.find("span").empty().append(checkbox);
+        info('irCk.renderCheckboxes -> Target column header with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" found and we will render checkbox!');
 
-    } else {
-      apex.debug.error('irCk.renderCheckboxes -> Target column header with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" not found!');
-    }
+        colHeader.find("span").empty().append(checkbox);
 
-    if (util.objExists(allCells)) {
-      info('irCk.renderCheckboxes -> Target column cells with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" found and we will render checkboxes!');
-
-      allCells.each(function() {
-        var value = this.textContent;
-
-        if (this.className.indexOf('aggregate') < 0) {
-          $(this).empty().append(irCk.createCheckbox(value));
-        }
-      });
-
-      if (pRenderSelections) {
-        irCk.renderSelections();
+      } else {
+        apex.debug.error('irCk.renderCheckboxes -> Target column header with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" not found!');
       }
-    } else {
-      apex.debug.error('irCk.renderCheckboxes -> Target column cells with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" not found!');
+
+      if (util.objExists(allCells)) {
+        info('irCk.renderCheckboxes -> Target column cells with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" found and we will render checkboxes!');
+
+        allCells.each(function() {
+          var value;
+          if (util.objExists(this.firstElementChild)) {
+            value = this.firstElementChild.value;
+          } else {
+            value = this.textContent;
+          }
+
+          if (this.className.indexOf('aggregate') < 0) {
+            $(this).empty().append(irCk.createCheckbox(value));
+          }
+        });
+
+      } else {
+        apex.debug.error('irCk.renderCheckboxes -> Target column cells with Static ID "' + options[irCk.reportId].checkBoxColumnId + '" not found!');
+      }
+
+    }
+    if (util.objExists(options[irCk.reportId].displayOnlyColumns)) {
+      var lDisplayOnlyColsArray = options[irCk.reportId].displayOnlyColumns.split(",");
+      info('irCk.renderCheckboxes -> We will render display only checboxes!');
+      for (var i = 0; i < lDisplayOnlyColsArray.length; i++) {
+        var allCells = $(irCk.reportId).find("td[headers*=" + lDisplayOnlyColsArray[i] + "]");
+
+        allCells.each(function() {
+
+          var value = this.textContent;
+
+          if (this.className.indexOf('aggregate') < 0) {
+            $(this).empty().append(irCk.createCheckbox(value));
+
+            if (value == 'Y') {
+              $(this).find('input')[0].checked = true;
+            }
+            $(this).find('input')[0].disabled = true;
+          }
+        });
+      }
 
     }
     // trigger this to force Interactive report to resize its column headers
     $(window).trigger("apexwindowresized");
   }
 
-  irCk.doAjax = function(pActionType, pAsync) {
+  irCk.doAjax = function(pActionType, pSource) {
     options[irCk.reportId].ajax.type = pActionType;
 
     var pAjaxCallbackName = options[irCk.reportId].ajax.id,
@@ -219,11 +247,21 @@ apex.kcUtils.irCheckbox.options = [];
       },
       pOptions;
 
-    pOptions = {
-      success: irCk.ajaxSuccess,
-      error: irCk.ajaxError,
-      async: pAsync
-    };
+    if (pActionType == CLEAR_CHECKBOX && 'internal' == pSource) {
+      pOptions = {
+        success: irCk.ajaxSuccess,
+        error: irCk.ajaxError
+      };
+      options[irCk.reportId].internalRefreshReportFlag = true;
+    } else {
+      pOptions = {
+        loadingIndicator: irCk.reportId,
+        loadingIndicatorPosition: 'centered',
+        success: irCk.ajaxSuccess,
+        error: irCk.ajaxError
+      };
+
+    }
 
     if (!options[irCk.reportId].ajax.running) {
 
@@ -237,6 +275,10 @@ apex.kcUtils.irCheckbox.options = [];
   irCk.ajaxSuccess = function(pData, pTextStatus, pJqXHR) {
     info("irCk.ajaxSuccess ajax.type: ", options[irCk.reportId].ajax.type);
 
+    if (util.objExists(this.refreshObject)) {
+      irCk.reportId = this.refreshObject;
+    }
+
     if (options[irCk.reportId].ajax.type == SUBMIT_CHECKBOX) {
 
       apex.event.trigger(irCk.reportId, 'ir_selection_changed');
@@ -246,14 +288,14 @@ apex.kcUtils.irCheckbox.options = [];
       gCheckedRecordsArray[irCk.reportId] = pData;
 
       if (irCk.hasReportData()) {
-        irCk.renderCheckboxes(true);
+        irCk.renderSelections();
       }
 
     } else if (options[irCk.reportId].ajax.type == CLEAR_CHECKBOX) {
 
       gCheckedRecordsArray[irCk.reportId] = [];
 
-      if (options[irCk.reportId].refreshReport == 'Y') {
+      if (options[irCk.reportId].refreshReport == 'Y' && !options[irCk.reportId].internalRefreshReportFlag) {
         $(irCk.reportId).trigger('apexrefresh');
       } else if (irCk.hasReportData()) {
         irCk.updateStateOfCheckboxHeader(false);
@@ -261,6 +303,7 @@ apex.kcUtils.irCheckbox.options = [];
       }
       apex.event.trigger(irCk.reportId, 'ir_selection_changed');
     }
+
     /* Resume execution of actions here and pass false to the callback, to indicate no
     error has occurred. */
     da.resume(options[irCk.reportId].resumeCallback, false);
@@ -296,15 +339,18 @@ apex.kcUtils.irCheckbox.options = [];
 
   irCk.handleReportRefresh = function() {
     info("irCk.handleReportRefresh of Report : " + irCk.reportId);
+
     if (!irCk.irHasMultipleViews() && irCk.hasReportData()) {
       var filters = irCk.getReportFilters(),
         filtersAreSame = irCk.checkIfFiltersAreTheSame(gReportFilters[irCk.reportId], filters);
 
-      irCk.renderCheckboxes(filtersAreSame);
+      irCk.renderCheckboxes();
 
       if (!filtersAreSame) {
         gReportFilters[irCk.reportId] = filters;
         irCk.clearCheckedRecordsArrayAjax('internal');
+      } else {
+        irCk.renderSelections();
       }
     }
   }
@@ -317,21 +363,30 @@ apex.kcUtils.irCheckbox.options = [];
       for (var i = 0; i < lAffectedItemsArray.length; i++) {
         $('#' + lAffectedItemsArray[i])[0].setAttribute("data-report-id", irCk.reportId);
       }
+    }else{
+      info("No page items specified !");
     }
   }
 
   irCk.handleLoadEvent = function() {
 
-    irCk.doAjax(RENDER_CHECKBOX, false);
+    irCk.renderCheckboxes();
 
-    gReportFilters[irCk.reportId] = irCk.getReportFilters();
+    if (!options[irCk.reportId].renderOnlyDisabledCB) {
+      gCheckedRecordsArray[irCk.reportId] = [];
 
-    $(options[irCk.reportId].context.triggeringElement).on("apexafterrefresh", function() {
-      irCk.reportId = '#' + this.id; //pOptions.refreshObject[0].id;
-      irCk.handleReportRefresh();
-    });
+      irCk.doAjax(RENDER_CHECKBOX);
 
-    irCk.setReportIdToItems(options[irCk.reportId].pageItems);
+      gReportFilters[irCk.reportId] = irCk.getReportFilters();
+
+      $(options[irCk.reportId].context.triggeringElement).on("apexafterrefresh", function() {
+        irCk.reportId = '#' + this.id;
+        irCk.handleReportRefresh();
+      });
+
+      irCk.setReportIdToItems(options[irCk.reportId].pageItems);
+
+    }
 
   }
 
@@ -354,7 +409,6 @@ apex.kcUtils.irCheckbox.options = [];
           irCk.updateStateOfAllChecboxes(lChecked);
 
           irCk.doAjax(SUBMIT_CHECKBOX, true);
-
         }
       } else if (util.objExists(lTrigerringRowElement)) {
 
@@ -363,7 +417,7 @@ apex.kcUtils.irCheckbox.options = [];
           info("irCk.handleClickEvent -> Row selection is enabled, so we got element from triggering row ! Element : " + lCheckBoxElement);
         } else {
           lCheckBoxElement = irCk.getCheckboxElement($(lEvent.target));
-          info("irCk.handleClickEvent -> Row selection is not enabled, so we only get the checkbox element only if the click is on the checkbox cell itself ! Element : " + lCheckBoxElement);
+          info("irCk.handleClickEvent -> Row selection is not enabled, so we only get the checkbox element only if the click is on the select checkbox with id [" + options[irCk.reportId].checkBoxColumnId + "] cell itself ! Element : " + lCheckBoxElement);
         }
         if (util.objExists(lCheckBoxElement)) {
 
@@ -374,7 +428,6 @@ apex.kcUtils.irCheckbox.options = [];
           irCk.doAjax(SUBMIT_CHECKBOX, true);
 
           irCk.updateStateOfCheckboxHeader();
-
         }
       }
     }
@@ -385,14 +438,15 @@ apex.kcUtils.irCheckbox.options = [];
     if (pSource == 'item') {
       if (util.objExists($(pTriggeringItem))) {
         irCk.reportId = pTriggeringItem.dataset.reportId;
-        irCk.doAjax(CLEAR_CHECKBOX, false);
+        irCk.doAjax(CLEAR_CHECKBOX);
       }
     } else if (pSource == 'internal') {
-      irCk.doAjax(CLEAR_CHECKBOX, false);
+      irCk.doAjax(CLEAR_CHECKBOX, pSource);
     }
   }
 
   if (apex.debug.LOG_LEVEL.APP_TRACE <= apex.debug.getLevel()) {
     util.functionLogger.addLoggingToNamespace(irCk);
   }
+
 })(apex.kcUtils.irCheckbox.options, apex.kcUtils.irCheckbox, apex.kcUtils, apex.debug.info, apex.jQuery, apex.da, apex.server, apex.region);

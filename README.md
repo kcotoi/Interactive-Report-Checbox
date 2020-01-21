@@ -29,9 +29,9 @@ In GIF below you can see exactly how the demo page for this plugin was configure
 ![Demo Page Config gif](Sources/IMG/DemoPageConfig.gif)
 
 ## Release History
-1.0 Initial Version
-1.1 Implemented fix for Internet Explorer 11.
-1.2 Improved the plugin by adding support for rendering of display only checkboxes.
+* 1.0 Initial Version
+* 1.1 Implemented fix for Internet Explorer 11.
+* 1.2 Improved the plugin by adding support for rendering of display only checkboxes.
 
 ## How to install
 Download this repository and install the plug-in into your application by following those steps:

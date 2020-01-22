@@ -34,10 +34,8 @@ In GIF below you can see exactly how the demo page for this plugin was configure
 * 1.2 Improved the plugin by adding support for rendering of display only checkboxes.
 
 ## How to install
-Download this repository and install the plug-in into your application by following those steps:
-1. Install package `IR_CHECKBOX_UTIL` in Oracle APEX Schema
-    * You can find it in folder : `Sources/DB`
-1. Install the plugin file `dynamic_action_plugin_de_kc_ir_checkbox.sql`
+Download this repository and install the plug-in into your application:
+* Install the plugin file `dynamic_action_plugin_de_kc_ir_checkbox.sql`
     * You can find it in folder : `Sources`
 
 ## Features

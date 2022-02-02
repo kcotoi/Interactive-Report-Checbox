@@ -103,16 +103,3 @@ The plugin also has 3 component settings which allows the developer to change th
 ## License
 
 MIT
-
-## About Author
-Author |Github | E-mail
--------|-------|-------
-Dragos Constantin Cotoi | [@kcotoi](https://github.com/kcotoi) | [dragos.cotoi@kubicek-consulting.de](mailto:dragos.cotoi@kubicek-consulting.de)
-
-## About Kubicek Consulting GmbH
-Address | Website | E-mail
---------|---------|-------
-Stubenwald-Allee 21a, 64625 Bensheim | [https://kubicek-consulting.de](https://kubicek-consulting.de) | [info@kubicek-consulting.de](mailto:info@kubicek-consulting.de)
-<p align="center">
-    <img src="https://raw.githubusercontent.com/kcotoi/Interactive-Report-Checbox/master/Sources/IMG/logo.png" width="400px">
-</p>
